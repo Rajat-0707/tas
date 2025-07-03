@@ -4,7 +4,7 @@ import TodoList from "./TodoList";
 import { BsPlus } from "react-icons/bs";
 import { addTodo } from "../redux/actions";
 import { toast, Toaster } from "sonner";
-import './Todo.css'; // ✅ Link to custom CSS
+import './Todo.css'; 
 
 const Todo = () => {
   const [newTodoText, setNewTodoText] = useState("");
