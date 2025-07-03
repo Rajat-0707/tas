@@ -4,6 +4,7 @@ import TodoList from "./TodoList";
 import { BsPlus } from "react-icons/bs";
 import { addTodo } from "../redux/actions";
 import { toast, Toaster } from "sonner";
+import './Todo.css'; // ✅ Link to custom CSS
 
 const Todo = () => {
   const [newTodoText, setNewTodoText] = useState("");
@@ -22,17 +23,15 @@ const Todo = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-100 via-white to-purple-100 p-4">
-      <div className="w-full max-w-2xl bg-white/80 backdrop-blur-md shadow-xl rounded-2xl p-6 border border-gray-200">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center font-mono tracking-widest uppercase">
-          Task Hub
-        </h2>
+    <div className="todo-container">
+      <div className="todo-box">
+        <h2 className="todo-title">Task Hub</h2>
 
         <Toaster richColors closeButton />
 
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+        <div className="todo-input-row">
           <input
-            className="w-full flex-1 p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-800 placeholder-gray-400 shadow-sm"
+            className="todo-input"
             type="text"
             value={newTodoText}
             onChange={(e) => setNewTodoText(e.target.value)}
@@ -40,7 +39,7 @@ const Todo = () => {
           />
 
           <select
-            className="w-full sm:w-40 p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 bg-white text-gray-700 shadow-sm"
+            className="todo-select"
             value={priority}
             onChange={(e) => setPriority(e.target.value)}>
             <option value="No">No Priority</option>
@@ -50,14 +49,14 @@ const Todo = () => {
           </select>
 
           <button
-            className="w-full sm:w-auto flex items-center justify-center gap-2 bg-indigo-600 text-white font-semibold px-5 py-3 rounded-lg hover:bg-indigo-700 transition duration-200 shadow-md"
+            className="todo-button"
             onClick={handleAddTodoClick}>
             <BsPlus size={22} />
-            <span className="text-sm">Add Task</span>
+            <span className="todo-button-text">Add Task</span>
           </button>
         </div>
 
-        <div className="border-t border-gray-300 pt-4">
+        <div className="todo-list-wrapper">
           <TodoList />
         </div>
       </div>
