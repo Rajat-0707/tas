@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { removeTodo, markCompleted, markIncomplete } from "../redux/actions";
 import { FaTrash, FaCheck, FaTimes } from "react-icons/fa";
 import { toast, Toaster } from "sonner";
-import './TodoItems.css'; // ✅ Link to the CSS
+import './TodoItems.css'; 
 
 const TodoItems = ({ todo, index }) => {
   const dispatch = useDispatch();
