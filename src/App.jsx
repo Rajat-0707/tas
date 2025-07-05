@@ -3,7 +3,7 @@ import Todo from "./components/Todo";
 
 function App() {
   return (
-    <div className="min-h-screen  sm:bg-white bg-gray-100">
+    <div >
       <div className="lg:pt-8">
         <Todo />
        
