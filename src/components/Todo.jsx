@@ -35,7 +35,7 @@ const Todo = () => {
             type="text"
             value={newTodoText}
             onChange={(e) => setNewTodoText(e.target.value)}
-            placeholder="What's on your mind?"
+            placeholder="Enter task here"
           />
 
           <select
@@ -43,9 +43,9 @@ const Todo = () => {
             value={priority}
             onChange={(e) => setPriority(e.target.value)}>
             <option value="No">No Priority</option>
-            <option value="High">🔥 High</option>
-            <option value="Med">⚡ Medium</option>
-            <option value="Low">🌱 Low</option>
+            <option value="High"> High</option>
+            <option value="Med"> Medium</option>
+            <option value="Low"> Low</option>
           </select>
 
           <button
